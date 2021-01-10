@@ -1,0 +1,154 @@
+.header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+z-index: 50;
+
+	&__body {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		height: 80px;
+		align-items: center;
+		
+	}
+
+	&__logo {
+		flex: 0 0 60px;
+		position: relative;
+		z-index: 3;
+
+	}
+
+	&__burger {
+		display: none;
+	}
+
+	&__list {
+		display: flex;
+		position: relative;
+		z-index: 2;
+
+	}
+
+	&__list li {
+		list-style: none;
+		margin: 0px 0px 0px 20px;
+		
+	}
+
+	&__link {
+		color: aliceblue;
+		text-transform: uppercase;
+		font-size: 18px;
+		text-decoration: none;
+	}
+
+@media (max-width:767px){
+
+
+
+	&__list{
+		display: block;
+
+	}
+
+	&__list li{
+		margin: 0px 0px 20px 0px;
+	}
+
+	&__logo{
+		flex: 0 0 40px;
+	}
+	&__body{
+		height: 50px;
+	}
+	&__burger{
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 20px;
+		z-index: 3;
+	}
+
+
+	&__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+	height: 100%;
+	background-color: blue;
+	padding: 70px 10px 20px 10px;
+	transition: all 0.5s;
+	overflow: auto;
+
+	}
+	&__menu.active{
+		top: 0;
+	}
+
+&__burger span{
+	position: absolute;
+	background-color: rgb(255, 255, 255);
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	top: 9px;
+	transition: all 0.3s ease 0s;
+
+}
+
+&__burger:before,
+&__burger::after{
+	content: '';
+	background-color: rgb(255, 255, 255);
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	left: 0;
+	transition: all 0.3s ease 0s;
+}
+&__burger:before{
+	top: 0;
+}
+&__burger::after{
+	bottom: 0;
+}
+
+&__burger.active::before{
+	transform: rotate(45deg);
+	top: 9px;
+}
+
+&__burger.active::after{
+	transform: rotate(-45deg);
+	bottom: 9px;
+}
+
+&__burger.active span{
+	transform: scale(0);
+}
+
+}
+	
+
+	
+}
+
+
+
+.header::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: green;
+	z-index: 2;
+}
+.container {
+}
